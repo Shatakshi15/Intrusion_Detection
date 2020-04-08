@@ -356,7 +356,7 @@ dst_host_srv_diff_host_rate2, dst_host_serror_rate2,
 dst_host_srv_serror_rate2, dst_host_rerror_rate2,
 dst_host_srv_rerror_rate2))
 
-print('X_train shape after merging categorical and continuous data = ',X_test_1.shape)
+print('X_test shape after merging categorical and continuous data = ',X_test_1.shape)
 print('='*40)
 
 from sklearn.externals import joblib
