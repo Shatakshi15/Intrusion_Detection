@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Apr  4 22:15:19 2020
+Created on Sat Apr  1 22:15:19 2020
 
 @author: shatakshi
 """
@@ -83,6 +83,13 @@ sorted_yi = np.argsort(-class_distribution.values)
 for i in sorted_yi:
     print('Number of data points in class', i+1,':', class_distribution.values[i], '(', np.round((class_distribution.values[i]/data.shape[0]*100), 3), '%)')
 print('='*40)
+
+'''This function creates pairplot taking 4 features from our dataset as default parameters along with the output variable '''
+def pairplot(data, label, features=[]):
+    plt.figure(figsize=(20,15))
+    sns.pairplot(data, hue=label, height=4, diag_kind='hist', vars=features, plot_kws={'alpha':0.6, 's':80, 'edgecolor':'k'})
+    
+pairplot(data, 'class', features=['duration', 'src_bytes', 'dst_bytes', 'wrong_fragment'])
 
 '''Train test splitting of data'''
 from sklearn.model_selection import train_test_split
